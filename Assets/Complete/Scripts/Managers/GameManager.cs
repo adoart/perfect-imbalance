@@ -213,7 +213,7 @@ namespace Complete
 
             // If there is a winner, change the message to display 'PLAYER #' in their color and a winning message.
             if(m_RoundWinner != null)
-                message = "<color=#" + m_RoundWinner.m_PlayerColor.ToHexStringRGB ()
+                message = "<color=#" + m_RoundWinner.m_PlayerColor.ToString()//.ToHexStringRGB()
 					+ ">PLAYER " + m_RoundWinner.m_PlayerNumber + "</color> WINS THE ROUND!";
 
             // After either the message of a draw or a winner, add some space before the leader board.
@@ -222,13 +222,13 @@ namespace Complete
             // Go through all the tanks and display their scores with their 'PLAYER #' in their color.
             for (int i = 0; i < m_Tanks.Length; i++)
             {
-                message += "<color=#" + m_Tanks[i].m_PlayerColor.ToHexStringRGB() 
+                message += "<color=#" + m_Tanks[i].m_PlayerColor.ToString()//.ToHexStringRGB() 
 					+ ">PLAYER " + m_Tanks[i].m_PlayerNumber + "</color>: " + m_Tanks[i].m_Wins + " WINS\n";
             }
 
             // If there is a game winner change the message to simply say which player has won the game.
             if(m_GameWinner != null)
-                message = "<color=#" + m_GameWinner.m_PlayerColor.ToHexStringRGB() 
+                message = "<color=#" + m_GameWinner.m_PlayerColor.ToString()//.ToHexStringRGB() 
 					+ ">PLAYER " + m_GameWinner.m_PlayerNumber + "</color> WINS THE GAME!";
             
             return message;
